@@ -1,8 +1,8 @@
 module.exports = {
     name: 'unmute',
     description: "Best thing!!!",
-    execute(message, args){
-        if(message.member.roles.cache.has('812010832586211409')){ //Ici on parle du rôle Mod
+    execute(bot, message, args){
+        if(message.member.roles.cache.has('812010832586211409')||('812509719801495554')){ //Ici on parle du rôle Mod
             const target = message.mentions.users.first();
             if(target){
                 let mainRole = message.guild.roles.cache.find(role => role.name === 'El Gars');

@@ -1,9 +1,9 @@
 module.exports = {
     name: 'clear',
     description: "Best thing!!!",
-    async execute(message, args){
+    async execute(bot, message, args){
         
-        if(message.member.roles.cache.has('812010832586211409')){ //Ici on parle du rôle Mod
+        if(message.member.roles.cache.has('812010832586211409')||('812509719801495554')){ //Ici on parle du rôle Mod
             if(!args[0]) return message.reply("Yo met des numéros calisse!");
             if(isNaN(args[0])) return message.reply("Brooo j'ai dis des NUMÉROS");
 

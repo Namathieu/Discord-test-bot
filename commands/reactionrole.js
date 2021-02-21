@@ -1,7 +1,7 @@
 module.exports = {
     name: 'reactionrole',
     description: "Best thing!!!",
-    async execute(message, args, Discord, bot) {
+    async execute(bot, message, args, Discord) {
         const channel = '812082693801639957';
         const modRole = message.guild.roles.cache.find(role => role.name === "Mod");
         const defaultRole = message.guild.roles.cache.find(role => role.name === "El Gars");
@@ -29,10 +29,10 @@ module.exports = {
 
             if (reaction.message.channel.id == channel) {
                 if (reaction.emoji.name === modEmoji) {
-                    await reaction.message, guild, members.cache.get(user.id).roles.add(modRole);
+                    await reaction.message.guild.members.cache.get(user.id).roles.add(modRole);
                 }
                 if (reaction.emoji.name === defaultEmoji) {
-                    await reaction.message, guild, members.cache.get(user.id).roles.add(defaultRole);
+                    await reaction.message.guild.members.cache.get(user.id).roles.add(defaultRole);
                 }
             } else {
                 return;
@@ -47,10 +47,10 @@ module.exports = {
 
             if (reaction.message.channel.id == channel) {
                 if (reaction.emoji.name === modEmoji) {
-                    await reaction.message, guild, members.cache.get(user.id).roles.remove(modRole);
+                    await reaction.message.guild.members.cache.get(user.id).roles.remove(modRole);
                 }
                 if (reaction.emoji.name === defaultEmoji) {
-                    await reaction.message, guild, members.cache.get(user.id).roles.remove(defaultRole);
+                    await reaction.message.guild.members.cache.get(user.id).roles.remove(defaultRole);
                 }
             } else {
                 return;
